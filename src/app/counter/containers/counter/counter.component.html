@@ -1,0 +1,11 @@
+<section>
+  <h3>Counter: {{ count }}</h3>
+  <div class="controls">
+    <button (click)="increment()">+</button>
+    <button (click)="decrement()">-</button>
+  </div>
+  <div>
+    <input type="number" #amount>
+    <button (click)="setCounter(amount.value)">Set counter</button>
+  </div>
+</section>
