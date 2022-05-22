@@ -11,6 +11,7 @@ import * as fromCounter from '@sandbox/counter/reducers';
 })
 export class CounterComponent {
   public count$ = this.store.select(fromCounter.selectCounterValue);
+  public updatedAt$ = this.store.select(fromCounter.selectUpdatedAt);
 
   constructor(private store: Store) { }
 

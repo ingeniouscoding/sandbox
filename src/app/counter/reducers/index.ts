@@ -31,3 +31,7 @@ export const selectCounterValue = createSelector(
   fromCounter.selectCounter
 );
 
+export const selectUpdatedAt = createSelector(
+  selectCounterFeature,
+  fromCounter.selectUpdatedAt
+);

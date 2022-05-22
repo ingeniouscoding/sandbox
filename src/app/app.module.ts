@@ -16,12 +16,12 @@ import { AppComponent } from './core/containers/app/app.component';
     AppRoutingModule,
     CoreModule,
     StoreModule.forRoot(reducers, {
-      metaReducers
+      metaReducers,
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
