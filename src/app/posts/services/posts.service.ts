@@ -7,27 +7,19 @@ import { Post } from '../models/post.model';
   providedIn: 'root',
 })
 export class PostsService {
-  private posts: Post[] = [
-    {
-      id: '1',
-      title: 'Post 1',
-      body: 'text 1 text 1 text 1 text 1',
-    },
-    {
-      id: '2',
-      title: 'Post 2',
-      body: 'text 2 text 2 text 2 text 2',
-    },
-    {
-      id: '3',
-      title: 'Post 3',
-      body: 'text 3 text 3 text 3 text 3',
-    },
-  ];
+  private posts: Post[] = [];
 
   constructor() { }
 
   getPosts(): Observable<Post[]> {
     return of(this.posts);
+  }
+
+  addPost(post: Post) {
+    const newPost = {
+      ...post,
+      id: Math.random().toString().substring(2),
+    };
+    return of(newPost);
   }
 }

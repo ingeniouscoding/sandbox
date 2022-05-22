@@ -18,5 +18,9 @@ export const reducer = createReducer(
   on(PostsApiActions.loadSuccess, (state, { posts }) => ({
     ...state,
     posts,
+  })),
+  on(PostsApiActions.createSuccess, (state, { post }) => ({
+    ...state,
+    posts: [...state.posts, post],
   }))
 );

@@ -1,8 +1,21 @@
 <header>
   <h1>Sandbox</h1>
   <nav>
-    <a [routerLink]="['/']" routerLinkActive="router-link-active">Home</a>
-    <a [routerLink]="['/counter']" routerLinkActive="router-link-active">Counter</a>
-    <a [routerLink]="['/posts']" routerLinkActive="router-link-active">Posts</a>
+    <a [routerLink]="['/']" routerLinkActive="router-link-active"
+      [routerLinkActiveOptions]="{ exact: true }">
+      Home
+    </a>
+    <a [routerLink]="['/counter']" routerLinkActive="router-link-active"
+      [routerLinkActiveOptions]="{ exact: true }">
+      Counter
+    </a>
+    <a [routerLink]="['/posts']" routerLinkActive="router-link-active"
+      [routerLinkActiveOptions]="{ exact: true }">
+      Posts
+    </a>
+    <a [routerLink]="['/posts/create']" routerLinkActive="router-link-active"
+      [routerLinkActiveOptions]="{ exact: true }">
+      New Post
+    </a>
   </nav>
 </header>

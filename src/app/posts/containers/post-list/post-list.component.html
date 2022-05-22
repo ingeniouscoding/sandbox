@@ -1,7 +1,8 @@
-<div *ngIf="posts$ | async as posts; else loading">
-  <app-post *ngFor="let post of posts" [post]="post"></app-post>
-</div>
+<div *ngIf="posts$ | async as posts">
+  <div *ngIf="posts.length > 0; else loading">
+    <app-post *ngFor="let post of posts" [post]="post"></app-post>
+  </div>
 
-<ng-template #loading>
-  <h3>loading...</h3>
-</ng-template>
+  <ng-template #loading>
+    <h3>loading...</h3>
+  </ng-template>

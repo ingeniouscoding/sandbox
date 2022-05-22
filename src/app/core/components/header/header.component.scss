@@ -10,5 +10,15 @@ nav {
 }
 
 a {
-  margin: 1rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: rgb(210, 252, 238);
+  }
+}
+
+.router-link-active {
+  background-color: rgb(189, 255, 232);
 }

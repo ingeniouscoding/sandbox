@@ -11,6 +11,7 @@ import * as fromPosts from '@sandbox/posts/reducers';
 import { PostsEffects } from './effects/posts-api.effects';
 import { PostCreateFormComponent } from './components/post-create-form/post-create-form.component';
 import { PostCreatePageComponent } from './containers/post-create-page/post-create-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PostCreatePageComponent } from './containers/post-create-page/post-crea
   imports: [
     CommonModule,
     PostsRoutingModule,
+    FormsModule,
     StoreModule.forFeature(fromPosts.postsFeatureKey, fromPosts.reducer),
     EffectsModule.forFeature([PostsEffects]),
   ]

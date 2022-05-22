@@ -7,7 +7,7 @@ import { CounterActions, UpdatedAtActions } from "../actions";
 @Injectable()
 export class CounterEffects {
   setUpdatedAt$ = createEffect(() =>
-    this.actions.pipe(
+    this.actions$.pipe(
       ofType(
         CounterActions.decrement,
         CounterActions.increment,
@@ -19,5 +19,5 @@ export class CounterEffects {
     )
   );
 
-  constructor(private actions: Actions) { }
+  constructor(private actions$: Actions) { }
 }
