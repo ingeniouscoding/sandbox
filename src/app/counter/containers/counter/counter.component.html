@@ -1,5 +1,5 @@
 <section>
-  <h3>Counter: {{ count }}</h3>
+  <h3>Counter: {{ count$ | async }}</h3>
   <div class="controls">
     <button (click)="increment()">+</button>
     <button (click)="decrement()">-</button>

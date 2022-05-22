@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+
+import { CounterActions } from '@sandbox/counter/actions';
+import * as fromCounter from '@sandbox/counter/reducers';
 
 @Component({
   selector: 'app-counter',
@@ -6,19 +10,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./counter.component.scss'],
 })
 export class CounterComponent {
-  public count = 0;
+  public count$ = this.store.select(fromCounter.selectCounterValue);
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   increment() {
-    this.count++;
+    this.store.dispatch(CounterActions.increment());
   }
 
   decrement() {
-    this.count--;
+    this.store.dispatch(CounterActions.decrement());
   }
 
-  setCounter(amount: string) {
-    this.count = +amount;
+  setCounter(newValue: string) {
+    let value = +newValue;
+    this.store.dispatch(CounterActions.setCounter({ value }));
   }
 }
