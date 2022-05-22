@@ -10,7 +10,7 @@ import * as fromCounter from '@sandbox/counter/reducers';
   styleUrls: ['./counter.component.scss'],
 })
 export class CounterComponent {
-  public count$ = this.store.select(fromCounter.selectCounterValue);
+  public count$ = this.store.select(fromCounter.selectCount);
   public updatedAt$ = this.store.select(fromCounter.selectUpdatedAt);
 
   constructor(private store: Store) { }

@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./counter/counter.module').then((m) => m.CounterModule),
   },
   {
+    path: 'posts',
+    loadChildren: () => import('./posts/posts.module').then((m) => m.PostsModule),
+  },
+  {
     path: '**', component: NotFoundPageComponent,
   },
 ];

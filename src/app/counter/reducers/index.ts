@@ -1,37 +1,37 @@
 import { Action, combineReducers, createFeatureSelector, createSelector } from '@ngrx/store';
 
 import * as fromCounter from './counter.reducer';
-import * as fromRoot from '@sandbox/reducers';
+import * as fromRoot from '@sandbox/app.reducer';
 
-export const counterFeatureKey = 'counterFeature';
+export const counterFeatureKey = 'counterModule';
 
-export interface CounterState {
+export interface CounterModuleState {
   [fromCounter.counterFeatureKey]: fromCounter.State,
 }
 
 export interface State extends fromRoot.State {
-  [counterFeatureKey]: CounterState,
+  [counterFeatureKey]: CounterModuleState,
 }
 
-export function reducer(state: CounterState | undefined, action: Action) {
+export function reducer(state: CounterModuleState | undefined, action: Action) {
   return combineReducers({
     [fromCounter.counterFeatureKey]: fromCounter.reducer,
   })(state, action);
 }
 
-export const selectCounterState = createFeatureSelector<CounterState>(counterFeatureKey);
+export const selectCounterFeature = createFeatureSelector<CounterModuleState>(counterFeatureKey);
 
-export const selectCounterFeature = createSelector(
-  selectCounterState,
-  (state) => state[fromCounter.counterFeatureKey]
+export const selectCounterState = createSelector(
+  selectCounterFeature,
+  (state) => state.counter
 );
 
-export const selectCounterValue = createSelector(
-  selectCounterFeature,
+export const selectCount = createSelector(
+  selectCounterState,
   fromCounter.selectCounter
 );
 
 export const selectUpdatedAt = createSelector(
-  selectCounterFeature,
+  selectCounterState,
   fromCounter.selectUpdatedAt
 );

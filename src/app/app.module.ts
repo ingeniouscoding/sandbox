@@ -5,7 +5,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 
 import { AppRoutingModule } from './app-routing.module';
-import { reducers, metaReducers } from './reducers';
+import { reducers, metaReducers } from './app.reducer';
 import { environment } from '../environments/environment';
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './core/containers/app/app.component';

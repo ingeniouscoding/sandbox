@@ -10,7 +10,7 @@ export interface State {
 }
 
 const initialState: State = {
-  count: 3,
+  count: 0,
   updatedAt: null,
 };
 
