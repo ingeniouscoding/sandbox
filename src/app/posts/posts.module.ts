@@ -9,11 +9,15 @@ import { PostComponent } from './components/post/post.component';
 
 import * as fromPosts from '@sandbox/posts/reducers';
 import { PostsEffects } from './effects/posts-api.effects';
+import { PostCreateFormComponent } from './components/post-create-form/post-create-form.component';
+import { PostCreatePageComponent } from './containers/post-create-page/post-create-page.component';
 
 @NgModule({
   declarations: [
     PostListComponent,
     PostComponent,
+    PostCreateFormComponent,
+    PostCreatePageComponent,
   ],
   imports: [
     CommonModule,
