@@ -17,13 +17,15 @@ export class PostCreateFormComponent {
   };
 
   onSubmit() {
-    if (this.post.title !== '' && this.post.body !== '') {
-      this.submitted.emit(this.post);
-    }
-    this.post = {
-      id: '',
-      title: '',
-      body: '',
+    const newPost: Post = {
+      ...this.post,
     };
+
+    if (newPost.title !== '' && newPost.body !== '') {
+      this.submitted.emit(newPost);
+    }
+
+    this.post.title = '';
+    this.post.body = '';
   }
 }

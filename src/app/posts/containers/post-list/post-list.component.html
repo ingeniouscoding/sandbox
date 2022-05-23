@@ -2,7 +2,10 @@
   <div *ngIf="posts.length > 0; else loading">
     <app-post *ngFor="let post of posts" [post]="post"></app-post>
   </div>
+</div>
 
-  <ng-template #loading>
-    <h3>loading...</h3>
-  </ng-template>
+<app-post-create-page></app-post-create-page>
+
+<ng-template #loading>
+  <h3>loading...</h3>
+</ng-template>

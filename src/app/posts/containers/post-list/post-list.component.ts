@@ -15,6 +15,6 @@ export class PostListComponent implements OnInit {
   constructor(private store: Store) { }
 
   ngOnInit(): void {
-    // this.store.dispatch(PostsActions.getAllPosts());
+    this.store.dispatch(PostsActions.getAllPosts());
   }
 }
