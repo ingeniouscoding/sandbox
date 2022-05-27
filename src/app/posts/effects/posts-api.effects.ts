@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Actions, ofType } from "@ngrx/effects";
 import { createEffect } from "@ngrx/effects";
-import { catchError, EMPTY, map, mergeMap, switchMap, tap } from "rxjs";
+import { catchError, EMPTY, map, mergeMap, switchMap } from "rxjs";
 
 import { PostsService } from '../services/posts.service';
 import { PostsActions, PostsApiActions } from "../actions";
