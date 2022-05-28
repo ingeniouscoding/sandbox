@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { PostsApiActions } from '@sandbox/posts/actions';
+import { PostsActions } from '@sandbox/posts/actions';
 import { Post } from '@sandbox/posts/models/post.model';
 
 @Component({
@@ -13,6 +13,6 @@ export class PostCreatePageComponent {
   constructor(private store: Store) { }
 
   onSubmit(post: Post) {
-    this.store.dispatch(PostsApiActions.createPost({ post }));
+    this.store.dispatch(PostsActions.createPost({ post }));
   }
 }

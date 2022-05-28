@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Post } from '@sandbox/posts/models/post.model';
 
 @Component({
@@ -8,4 +8,9 @@ import { Post } from '@sandbox/posts/models/post.model';
 })
 export class PostComponent {
   @Input() public post!: Post;
+  @Output() public delete = new EventEmitter<string>();
+
+  onDelete(id: string) {
+    this.delete.emit(id);
+  }
 }

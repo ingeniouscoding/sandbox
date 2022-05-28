@@ -1,0 +1,6 @@
+<div *ngIf="post$ | async as post else loading">
+  <app-post-edit-form [post]="post"></app-post-edit-form>
+</div>
+<ng-template #loading>
+  <h3>Loading...</h3>
+</ng-template>

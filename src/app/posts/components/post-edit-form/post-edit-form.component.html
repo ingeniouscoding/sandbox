@@ -1,0 +1,17 @@
+<form [formGroup]="editPost" (ngSubmit)="onSubmit()">
+  <div>
+    <div>
+      <label for="title">Title</label>
+    </div>
+    <input id="title" type="text" formControlName="title" />
+  </div>
+  <div>
+    <div>
+      <label for="post_body">Body</label>
+    </div>
+    <textarea id="post_body" cols="30" rows="10" formControlName="body"></textarea>
+  </div>
+  <div>
+    <input type="submit" value="Save" />
+  </div>
+</form>

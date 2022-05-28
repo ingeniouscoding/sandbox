@@ -10,6 +10,8 @@ import { reducers, metaReducers } from './app.reducer';
 import { environment } from '../environments/environment';
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './core/containers/app/app.component';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { CustomSerializer } from './core/router/custom-route-serializer';
 
 @NgModule({
   imports: [
@@ -22,6 +24,9 @@ import { AppComponent } from './core/containers/app/app.component';
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot({
+      serializer: CustomSerializer,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

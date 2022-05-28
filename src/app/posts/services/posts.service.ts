@@ -8,13 +8,27 @@ import { Post } from '../models/post.model';
   providedIn: 'root',
 })
 export class PostsService {
+  private url = 'http://localhost:3000/posts/';
+
   constructor(private http: HttpClient) { }
 
-  getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>('http://localhost:3000/posts');
+  getAll(): Observable<Post[]> {
+    return this.http.get<Post[]>(this.url);
   }
 
-  addPost(post: Post): Observable<Post> {
-    return this.http.post<Post>('http://localhost:3000/posts', { ...post });
+  getById(id: string): Observable<Post> {
+    return this.http.get<Post>(this.url + id);
+  }
+
+  create(post: Post): Observable<Post> {
+    return this.http.post<Post>(this.url, { ...post });
+  }
+
+  update(post: Post): Observable<Post> {
+    return this.http.patch<Post>(this.url + post.id, { ...post });
+  }
+
+  delete(id: string) {
+    return this.http.delete(this.url + id);
   }
 }

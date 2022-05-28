@@ -13,17 +13,18 @@ export interface State extends fromRoot.State {
   [counterFeatureKey]: CounterModuleState,
 }
 
-export function reducer(state: CounterModuleState | undefined, action: Action) {
+export function reducers(state: CounterModuleState | undefined, action: Action) {
   return combineReducers({
     [fromCounter.counterFeatureKey]: fromCounter.reducer,
   })(state, action);
 }
 
-export const selectCounterFeature = createFeatureSelector<CounterModuleState>(counterFeatureKey);
+const selectCounterFeature =
+  createFeatureSelector<CounterModuleState>(counterFeatureKey);
 
-export const selectCounterState = createSelector(
+const selectCounterState = createSelector(
   selectCounterFeature,
-  (state) => state.counter
+  (feature) => feature.counter
 );
 
 export const selectCount = createSelector(

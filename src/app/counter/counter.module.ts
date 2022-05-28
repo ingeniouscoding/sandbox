@@ -16,7 +16,7 @@ import * as fromCounter from '@sandbox/counter/reducers';
   imports: [
     CommonModule,
     CounterRoutingModule,
-    StoreModule.forFeature(fromCounter.counterFeatureKey, fromCounter.reducer),
+    StoreModule.forFeature(fromCounter.counterFeatureKey, fromCounter.reducers),
     EffectsModule.forFeature([CounterEffects]),
   ],
 })
