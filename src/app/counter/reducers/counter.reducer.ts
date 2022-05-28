@@ -16,18 +16,22 @@ const initialState: State = {
 
 export const reducer = createReducer(
   initialState,
+
   on(CounterActions.increment, (state) => ({
     ...state,
     count: state.count + 1,
   })),
+
   on(CounterActions.decrement, (state) => ({
     ...state,
     count: state.count - 1,
   })),
+
   on(CounterActions.setCounter, (state, { value }) => ({
     ...state,
     count: value,
   })),
+
   on(UpdatedAtActions.setUpdatedAt, (state, { currentTime }) => ({
     ...state,
     updatedAt: currentTime,
