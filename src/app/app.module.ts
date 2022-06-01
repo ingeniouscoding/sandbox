@@ -12,6 +12,7 @@ import { CoreModule } from './core/core.module';
 import { AppComponent } from './core/containers/app/app.component';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { CustomSerializer } from './core/router/custom-route-serializer';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { CustomSerializer } from './core/router/custom-route-serializer';
     StoreRouterConnectingModule.forRoot({
       serializer: CustomSerializer,
     }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
