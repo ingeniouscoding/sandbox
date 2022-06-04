@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
 
 import { UserFormService } from '@sandbox/auth/services/user-form.service';
 
@@ -9,18 +8,9 @@ import { UserFormService } from '@sandbox/auth/services/user-form.service';
   styleUrls: ['./register-page.component.scss'],
 })
 export class RegisterPageComponent {
-  public fg = this.fb.group({
-    username: this.formService.getUsernameControl(),
-    password: this.formService.getPasswordControl(),
-    passwordConfirm: ['', [
-      Validators.required,
-    ]],
-  });
+  public fg = this.formService.getLoginForm();
 
-  constructor(
-    private formService: UserFormService,
-    private fb: FormBuilder
-  ) { }
+  constructor(private formService: UserFormService) { }
 
   onSubmit() {
     console.log(this.fg.getRawValue());

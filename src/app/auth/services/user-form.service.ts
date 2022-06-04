@@ -5,25 +5,36 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   providedIn: 'root',
 })
 export class UserFormService {
-  getBaseForm(): FormGroup {
+  getLoginForm(): FormGroup {
     const fg = new FormGroup({
-      username: new FormControl('', [
-        Validators.required,
-      ]),
-      password: new FormControl('', [
-        Validators.required,
-      ]),
+      username: this.getUsernameControl(),
+      password: this.getPasswordControl(),
     });
     return fg;
   }
 
-  getUsernameControl() {
+  getRegisterForm() {
+    const fg = new FormGroup({
+      username: this.getUsernameControl(),
+      password: this.getPasswordControl(),
+      passwordConfirm: this.getPasswordConfirmControl(),
+    });
+    return fg;
+  }
+
+  private getUsernameControl() {
     return new FormControl('', [
       Validators.required,
     ]);
   }
 
-  getPasswordControl() {
+  private getPasswordControl() {
+    return new FormControl('', [
+      Validators.required,
+    ]);
+  }
+
+  private getPasswordConfirmControl() {
     return new FormControl('', [
       Validators.required,
     ]);

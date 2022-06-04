@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 
 import { UserFormService } from '@sandbox/auth/services/user-form.service';
 
@@ -9,15 +8,9 @@ import { UserFormService } from '@sandbox/auth/services/user-form.service';
   styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent {
-  public fg = this.fb.group({
-    username: this.formService.getUsernameControl(),
-    password: this.formService.getPasswordControl(),
-  });
+  public fg = this.formService.getRegisterForm();
 
-  constructor(
-    private formService: UserFormService,
-    private fb: FormBuilder
-  ) { }
+  constructor(private formService: UserFormService) { }
 
   onSubmit() {
     console.log(this.fg.getRawValue());
