@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+
+import { AuthFormService } from '@sandbox/auth/services/auth-form.service';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss']
+  styleUrls: ['./login-page.component.scss'],
 })
-export class LoginPageComponent implements OnInit {
+export class LoginPageComponent {
+  public fg = this.fb.group({
+    username: this.formService.getUsernameControl(),
+    password: this.formService.getPasswordControl(),
+  });
 
-  constructor() { }
+  constructor(
+    private formService: AuthFormService,
+    private fb: FormBuilder
+  ) { }
 
-  ngOnInit(): void {
+  onSubmit() {
+    console.log(this.fg.getRawValue());
   }
-
 }

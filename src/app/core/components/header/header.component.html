@@ -21,5 +21,13 @@
       [routerLinkActiveOptions]="{ exact: true }">
       Material
     </a>
+    <a [routerLink]="['/auth/login']" routerLinkActive="router-link-active"
+      [routerLinkActiveOptions]="{ exact: true }">
+      Login
+    </a>
+    <a [routerLink]="['/auth/register']" routerLinkActive="router-link-active"
+      [routerLinkActiveOptions]="{ exact: true }">
+      Register
+    </a>
   </nav>
 </header>

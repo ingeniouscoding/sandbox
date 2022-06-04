@@ -1,1 +1,19 @@
-<p>base-form works!</p>
+<div [formGroup]="parentGroup">
+
+  <p>
+    <mat-form-field class="auth-form__field">
+      <mat-label class="foo">Username</mat-label>
+      <input type="text" placeholder="username"
+        matInput formControlName="username">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field class="auth-form__field">
+      <mat-label>Password</mat-label>
+      <input type="password" placeholder="******"
+        matInput formControlName="password">
+    </mat-form-field>
+  </p>
+
+</div>

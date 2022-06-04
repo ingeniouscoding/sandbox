@@ -1,1 +1,19 @@
-<p>register-page works!</p>
+<form class="auth-form" [formGroup]="fg" (ngSubmit)="onSubmit()">
+
+  <app-base-form [parentGroup]="fg"></app-base-form>
+
+  <p>
+    <mat-form-field class="auth-form__field">
+      <mat-label>Confirm Password</mat-label>
+      <input type="password" matInput placeholder="******" formControlName="passwordConfirm">
+    </mat-form-field>
+  </p>
+
+  <div class="auth-form__actions">
+    <button type="submit" mat-raised-button color="primary"
+      [disabled]="!fg.valid">
+      Register
+    </button>
+  </div>
+
+</form>

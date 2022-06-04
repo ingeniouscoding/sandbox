@@ -1,1 +1,12 @@
-<p>login-page works!</p>
+<form class="auth-form" (ngSubmit)="onSubmit()">
+
+  <app-base-form [parentGroup]="fg"></app-base-form>
+
+  <div class="auth-form__actions">
+    <button type="submit" mat-raised-button color="primary"
+      [disabled]="!fg.valid">
+      Login
+    </button>
+  </div>
+
+</form>

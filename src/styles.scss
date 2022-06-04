@@ -15,3 +15,21 @@ body {
 .app-background {
   background: #303030;
 }
+
+.auth-form {
+  width: 400px;
+  background: rgb(87, 87, 87);
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 4px;
+
+
+  &__field {
+    width: 100%;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+  }
+}

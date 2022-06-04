@@ -9,15 +9,23 @@ const routes: Routes = [
   },
   {
     path: 'counter',
-    loadChildren: () => import('./counter/counter.module').then((m) => m.CounterModule),
+    loadChildren: () =>
+      import('./counter/counter.module').then((m) => m.CounterModule),
   },
   {
     path: 'posts',
-    loadChildren: () => import('./posts/posts.module').then((m) => m.PostsModule),
+    loadChildren: () =>
+      import('./posts/posts.module').then((m) => m.PostsModule),
   },
   {
     path: 'mat',
-    loadChildren: () => import('./mat/mat.module').then((m) => m.MatModule),
+    loadChildren: () =>
+      import('./mat/mat.module').then((m) => m.MatModule),
+  },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: '**', component: NotFoundPageComponent,
@@ -26,6 +34,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
