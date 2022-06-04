@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
-import { AuthFormService } from '@sandbox/auth/services/auth-form.service';
+import { UserFormService } from '@sandbox/auth/services/user-form.service';
 
 @Component({
   selector: 'app-register-page',
@@ -18,7 +18,7 @@ export class RegisterPageComponent {
   });
 
   constructor(
-    private formService: AuthFormService,
+    private formService: UserFormService,
     private fb: FormBuilder
   ) { }
 

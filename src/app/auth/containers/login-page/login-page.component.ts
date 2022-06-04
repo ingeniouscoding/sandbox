@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
-import { AuthFormService } from '@sandbox/auth/services/auth-form.service';
+import { UserFormService } from '@sandbox/auth/services/user-form.service';
 
 @Component({
   selector: 'app-login-page',
@@ -15,7 +15,7 @@ export class LoginPageComponent {
   });
 
   constructor(
-    private formService: AuthFormService,
+    private formService: UserFormService,
     private fb: FormBuilder
   ) { }
 

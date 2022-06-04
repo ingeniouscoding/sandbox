@@ -4,7 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthFormService {
+export class UserFormService {
   getBaseForm(): FormGroup {
     const fg = new FormGroup({
       username: new FormControl('', [
