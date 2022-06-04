@@ -4,6 +4,12 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 import { PostsRoutingModule } from './posts-routing.module';
 import { PostsEffects } from './effects/posts-api.effects';
 import * as fromPosts from '@sandbox/posts/reducers';
@@ -31,6 +37,11 @@ import { PostEditPageComponent } from './containers/post-edit-page/post-edit-pag
     ReactiveFormsModule,
     StoreModule.forFeature(fromPosts.postsFeatureKey, fromPosts.reducers),
     EffectsModule.forFeature([PostsEffects]),
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
 })
 export class PostsModule { }

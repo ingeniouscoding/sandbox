@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./posts/posts.module').then((m) => m.PostsModule),
   },
   {
+    path: 'mat',
+    loadChildren: () => import('./mat/mat.module').then((m) => m.MatModule),
+  },
+  {
     path: '**', component: NotFoundPageComponent,
   },
 ];

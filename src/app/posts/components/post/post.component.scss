@@ -1,5 +1,9 @@
 .post {
-  padding: 1rem;
-  margin: 0.5rem;
-  background-color: antiquewhite;
+  max-width: 500px;
+  margin-bottom: 0.5rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
 }

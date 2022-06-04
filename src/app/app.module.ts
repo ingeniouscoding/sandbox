@@ -4,15 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
-import { reducers, metaReducers } from './app.reducer';
-import { environment } from '../environments/environment';
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './core/containers/app/app.component';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { AppRoutingModule } from './app-routing.module';
+import { environment } from '../environments/environment';
+import { reducers, metaReducers } from './app.reducer';
 import { CustomSerializer } from './core/router/custom-route-serializer';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
