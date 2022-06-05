@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@sandbox/auth/services/auth.service';
 
 import { UserFormService } from '@sandbox/auth/services/user-form.service';
 
@@ -7,12 +8,19 @@ import { UserFormService } from '@sandbox/auth/services/user-form.service';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
 })
-export class LoginPageComponent {
-  public fg = this.formService.getRegisterForm();
+export class LoginPageComponent implements OnInit {
+  public fg = this.formService.getLoginForm();
 
-  constructor(private formService: UserFormService) { }
+  constructor(
+    private formService: UserFormService,
+    private auth: AuthService
+  ) { }
+
+  ngOnInit(): void {
+    this.auth.getToken();
+  }
 
   onSubmit() {
-    console.log(this.fg.getRawValue());
+    this.auth.login();
   }
 }

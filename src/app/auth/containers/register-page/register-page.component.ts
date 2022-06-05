@@ -8,7 +8,7 @@ import { UserFormService } from '@sandbox/auth/services/user-form.service';
   styleUrls: ['./register-page.component.scss'],
 })
 export class RegisterPageComponent {
-  public fg = this.formService.getLoginForm();
+  public fg = this.formService.getRegisterForm();
 
   constructor(private formService: UserFormService) { }
 
